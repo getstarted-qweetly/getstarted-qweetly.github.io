@@ -17,12 +17,10 @@ async function copyToClipboard() {
     try {
         await navigator.clipboard.writeText(code);
         
-        // Save the original text, change it to "Copied!", and disable the button
         const originalText = button.textContent;
         button.textContent = "Copied!";
         button.disabled = true;
 
-        // Reset the button back to normal after 2 seconds (2000 milliseconds)
         setTimeout(() => {
             button.textContent = originalText;
             button.disabled = false;
@@ -33,6 +31,3 @@ async function copyToClipboard() {
         alert("Failed to copy to clipboard.");
     }
 }
-
-// Bind the function to your button ID
-document.getElementById("copytoclipboardbutton").addEventListener("click", copyToClipboard);
