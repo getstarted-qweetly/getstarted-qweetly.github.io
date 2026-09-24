@@ -13,20 +13,6 @@
     </div>
 </body>`;
 
-            try {
-                await navigator.clipboard.writeText(code);
-
-                const button = document.querySelector(".gsbutton");
-                const oldText = button.textContent;
-
-                button.textContent = "Copied!";
-
-                setTimeout(() => {
-                    button.textContent = oldText;
-                }, 1500);
-
-            } catch (error) {
+catch (error) {
                 console.error("Failed to copy:", error);
                 alert("Failed to copy to clipboard.");
-            }
-        }
